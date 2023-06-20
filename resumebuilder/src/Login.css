@@ -7,6 +7,7 @@
     background-position: center;
     background-repeat: no-repeat;
     display:flow-root;
+    
 }
 .login-container {
  
@@ -15,8 +16,8 @@
     align-items: center;
     justify-content: center;
     width: 300px;
-    margin-top: 200px;
-    margin-left: 650px;
+    margin-top: 160px;
+    margin-left: 550px;
     padding: 20px;
     background-color: #e6f0ff;
     border-radius: 5px;
@@ -52,6 +53,7 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    width: 100%;
   }
   
   button[type="submit"]:hover {

@@ -48,13 +48,13 @@ app.post('/signup', (req, res) => {
 app.post('/saveAchievements', (req, res) => {
   const achievements = req.body.points;
 
-
+  const achievementsJSON = JSON.stringify(achievements);
   // SQL query
-  const query = "INSERT INTO AchievementsTable (`achievement`) VALUES ?";
+  const query = "INSERT INTO achievementstbl (`achievement`) VALUES (?)";
 
-  const achievementsData = achievements.map(achievement => [achievement]); 
+  
 
-  db.query(query, [achievementsData], (err, result) => {
+  db.query(query, [achievementsJSON], (err, result) => {
     if (err) {
       console.log(err.message);
       res.status(500).send('Server error');

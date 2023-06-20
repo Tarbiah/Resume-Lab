@@ -744,7 +744,38 @@ function Editor (props)
     
             {generateBody()}
     
-            <button onClick={()=>{handleSubmission();handledb();handleedudb();handleesumdb();handleeotherdb();handleachdb();handleworkdb();handleprojectdb();}} >Save</button>
+            <button onClick={() => {
+                handleSubmission();
+
+          switch (sections[activeSectionKey])   {
+            case sections.basicInfo:{
+              handledb();
+              break;}
+            case sections.education:{
+              handleedudb();
+              break;}
+            case sections.summary:
+              handleesumdb();
+              break;
+            case sections.other:
+              handleeotherdb();
+              break;
+            case sections.achievement:
+              handleachdb();
+              break;
+            case sections.workExp:
+              handleworkdb();
+              break;
+            case sections.project:
+              handleprojectdb();
+              break;
+            default:
+              break;
+          }
+        }}>
+          Save
+        </button>
+
           </div>
         </div>
       );
